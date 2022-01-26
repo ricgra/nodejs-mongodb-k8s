@@ -48,7 +48,12 @@ NAME                     READY   STATUS    RESTARTS   AGE
 mongo-controller-57xrw   1/1     Running   0          4m
 ```
 
-## 5 - Create web server controller and service in k8s
+## 5 - Create secret in k8s
+```
+kubectl create -f secret.yml
+```
+
+## 6 - Create web server controller and service in k8s
 ```
 kubectl create -f web-controller.yml
 
@@ -69,7 +74,7 @@ web-controller-9sf6w     1/1     Running   0          1m
 web-controller-jgfzl     1/1     Running   0          1m
 ```
 
-## 6 - Access to application
+## 7 - Access to application
 ```
 minikube service web
 
