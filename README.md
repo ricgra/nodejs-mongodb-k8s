@@ -95,6 +95,6 @@ minikube service web
 🎉  Opening service default/web in default browser...
 ```
 
-Component         | URL                                      | Credentials
----               | ---                                      | ---
-Swagger (API Ref) |  http://<YOUR_CLUSTER_IP>:<CLUSTER_PORT>/docs   |
+Component         | URL                                      
+---               | ---                                      
+Swagger (API Ref) |  http://<YOUR_CLUSTER_IP>:<CLUSTER_PORT>/docs
