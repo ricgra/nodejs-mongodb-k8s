@@ -6,6 +6,22 @@ const database = require('../db/database');
 const mongoUrl = "mongodb://localhost:27017/";
 const databaseName = "users";
 
+/**
+ * @swagger
+ * /customer/{name}:
+ *   get:
+ *     summary: Retrieve a customer by name
+ *     parameters:
+ *       - in: path
+ *         name: name
+ *         required: true
+ *         description: Customer name
+ *         schema:
+ *           type: string
+ *     responses:
+ *      '200':
+ *          description: Successfully returned the customer
+*/
 router.get('/:name', (req, res) => {
     database(mongoUrl, function (err, db) {
         if (err) res.send(err);
@@ -21,6 +37,30 @@ router.get('/:name', (req, res) => {
     });
 });
 
+/**
+ * @swagger
+ * /customer:
+ *   post:
+ *     summary: Create a customer
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 description: The customer's name.
+ *                 example: John Doe
+ *               age:
+ *                 type: integer
+ *                 description: The customer's age.
+ *                 example: 25
+ *     responses:
+ *      '200':
+ *          description: Successfully created the customer
+*/
 router.post('/', (req, res) => {
     database(mongoUrl, function (err, db) {
         if (err) res.send(err);
