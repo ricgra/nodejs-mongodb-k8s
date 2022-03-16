@@ -97,4 +97,4 @@ minikube service web
 
 Component         | URL                                      | Credentials
 ---               | ---                                      | ---
-Swagger (API Ref) |  <<http://<YOUR_CLUSTER_IP>:<CLUSTER_PORT>/docs>>   |
+Swagger (API Ref) |  http://<YOUR_CLUSTER_IP>:<CLUSTER_PORT>/docs   |
