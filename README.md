@@ -3,12 +3,15 @@
 # Prerequisites
 
 ### [Account on Docker Hub](https://hub.docker.com/)
+
 ### [minikube](https://minikube.sigs.k8s.io/docs/start/)
+
 ### [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 
 # Steps
 
 ## 1 - Building Docker container for our application
+
 ```
 cd app
 
@@ -16,6 +19,7 @@ docker build -t <YOUR_DOCKER_HUB_USER_ID>/web-mongodb-k8s .
 ```
 
 ## 2 - Push Docker container on Docker Hub
+
 ```
 docker login -u <YOUR_DOCKER_HUB_USER_ID>
 
@@ -23,11 +27,13 @@ docker push <YOUR_DOCKER_HUB_USER_ID>/web-mongodb-k8s
 ```
 
 ## 3 - Start minikube cluster(default driver is docker)
+
 ```
 minikube start
 ```
 
 ## 4 - Create database controller and service in k8s
+
 ```
 cd ../k8s
 
@@ -49,11 +55,13 @@ mongo-controller-57xrw   1/1     Running   0          4m
 ```
 
 ## 5 - Create secret in k8s
+
 ```
 kubectl create -f secret.yml
 ```
 
 ## 6 - Create web server controller and service in k8s
+
 ```
 kubectl create -f web-controller.yml
 
@@ -75,6 +83,7 @@ web-controller-jgfzl     1/1     Running   0          1m
 ```
 
 ## 7 - Access to application
+
 ```
 minikube service web
 
@@ -85,3 +94,7 @@ minikube service web
 |-----------|------|-------------|----------------------------------------|
 🎉  Opening service default/web in default browser...
 ```
+
+Component         | URL                                      | Credentials
+---               | ---                                      | ---
+Swagger (API Ref) |  <<http://<YOUR_CLUSTER_IP>:<CLUSTER_PORT>/docs>>   |
