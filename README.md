@@ -1,5 +1,7 @@
 # Node.js and MongoDB on Kubernetes
 
+Quick example to locally run the Node.js application using Kubernetes and Docker 
+
 # Prerequisites
 
 ### [Account on Docker Hub](https://hub.docker.com/)
